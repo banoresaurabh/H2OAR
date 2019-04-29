@@ -19,7 +19,9 @@
     <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
         <div id="globeArea" style="width: 600px; height: 600px"></div>
         <script>
-				var container = document.getElementById("globeArea");
+		var markerRoot1;
+				//var container = document.getElementById("globeArea");
+				var container = markerRoot1;
                 // configuration is taken from the first example in playground
                 var controller = new GIO.Controller(container, { "control": { "stats": false, "disableUnmentioned": true, "lightenMentioned": false, "inOnly": false, "outOnly": false, "initCountry": "AT", "halo": true, "transparentBackground": true, "autoRotation": true, "rotationRatio": 1 }, "color": { "surface": 1744048, "selected": 2141154, "out": 16777215, "in": 2141154, "halo": 2141154, "background": null }, "brightness": { "ocean": 1.0, "mentioned": 0.0, "related": 0.0 } });
                 var data = [
@@ -93,7 +95,7 @@
 		
 var scene, camera, renderer, clock, deltaTime, totalTime;
 var arToolkitSource, arToolkitContext;
-var markerRoot1;
+//var markerRoot1;
 var mesh1;
 initialize();
 animate();
@@ -182,7 +184,7 @@ function initialize()
 	controller.addData(data);
     controller.init();
 	
-	markerRoot1.add( controller );
+	markerRoot1.add( mesh1 );
 	
 	//markerRoot1.add( mesh1 );
 }
