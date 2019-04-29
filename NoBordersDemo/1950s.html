@@ -1,0 +1,83 @@
+<html>
+    <head>
+        <script src="three.min.js"></script>
+        <script src="gio.min.js"></script> 
+    </head>
+    <body>
+        <div id="globeArea" style="width: 600px; height: 600px"></div>
+        <script>
+                var container = document.getElementById("globeArea");
+                // configuration is taken from the first example in playground
+                var controller = new GIO.Controller(container, { "control": { "stats": false, "disableUnmentioned": true, "lightenMentioned": false, "inOnly": false, "outOnly": false, "initCountry": "AT", "halo": true, "transparentBackground": false, "autoRotation": false, "rotationRatio": 1 }, "color": { "surface": 1744048, "selected": 2141154, "out": 16777215, "in": 2141154, "halo": 2141154, "background": 0 }, "brightness": { "ocean": 1.0, "mentioned": 0.0, "related": 0.0 } });
+                var data = [
+                    {
+                        "e": "AR", //Argentina
+                        "i": "AT",
+                        "v": 72000
+                    },
+                    {
+                        "e": "BB", //Barbados
+                        "i": "AT", 
+                        "v": 408000
+                    },
+					{
+                        "e": "BR", //Brazil
+                        "i": "AT", 
+                        "v": 324000
+                    },
+					{
+                        "e": "CA", //Canada
+                        "i": "AT", 
+                        "v": 960000
+                    },
+					{
+                        "e": "FR", //France
+                        "i": "AT", 
+                        "v": 72000
+                    },
+					{
+                        "e": "DE", //Germany
+                        "i": "AT", 
+                        "v": 60000
+                    },
+					{
+                        "e": "IN", //India
+                        "i": "AT", 
+                        "v": 24000
+                    },
+					{
+                        "e": "ID", //Indonesia
+                        "i": "AT", 
+                        "v": 420000
+                    },
+					{
+                        "e": "IE", //Ireland
+                        "i": "AT", 
+                        "v": 708000
+                    },
+					{
+                        "e": "NZ", //New Zealand
+                        "i": "AT", 
+                        "v": 456000
+                    },
+					{
+                        "e": "NO", //Norway
+                        "i": "AT", 
+                        "v": 24000
+                    },
+					{
+                        "e": "ZA", //South Africa
+                        "i": "AT", 
+                        "v": 493000
+                    },
+					{
+                        "e": "SE", //Sweden
+                        "i": "AT", 
+                        "v": 144000
+                    }
+                ];
+                controller.addData(data);
+                controller.init();
+        </script> 
+    </body>
+</html>
