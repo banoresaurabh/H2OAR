@@ -16,13 +16,14 @@
 		<script src="https://raw.githubusercontent.com/stemkoski/AR-Examples/master/threex/threex-arbasecontrols.js"></script>
 		<script src="https://raw.githubusercontent.com/stemkoski/AR-Examples/master/threex/threex-armarkercontrols.js"></script>
     </head>
-    <body style='margin : 0px; overflow: hidden; font-family: Monospace;'>
+    <body style='margin : 0px; overflow: hidden; font-family: Monospace;' id="body">
         <div id="globeArea" style="width: 600px; height: 600px"></div>
         <script>
 		var markerRoot1;
 				//var container = document.getElementById("globeArea");
+				var container = document.getElementById("body");
                 // configuration is taken from the first example in playground
-                var controller = new GIO.Controller(body, { "control": { "stats": false, "disableUnmentioned": true, "lightenMentioned": false, "inOnly": false, "outOnly": false, "initCountry": "AT", "halo": true, "transparentBackground": true, "autoRotation": true, "rotationRatio": 1 }, "color": { "surface": 1744048, "selected": 2141154, "out": 16777215, "in": 2141154, "halo": 2141154, "background": null }, "brightness": { "ocean": 1.0, "mentioned": 0.0, "related": 0.0 } });
+                var controller = new GIO.Controller(container, { "control": { "stats": false, "disableUnmentioned": true, "lightenMentioned": false, "inOnly": false, "outOnly": false, "initCountry": "AT", "halo": true, "transparentBackground": true, "autoRotation": true, "rotationRatio": 1 }, "color": { "surface": 1744048, "selected": 2141154, "out": 16777215, "in": 2141154, "halo": 2141154, "background": null }, "brightness": { "ocean": 1.0, "mentioned": 0.0, "related": 0.0 } });
                 var data = [
                     {
                         "e": "AR", //Argentina
