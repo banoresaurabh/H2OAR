@@ -97,6 +97,8 @@ var scene, camera, renderer, clock, deltaTime, totalTime;
 var arToolkitSource, arToolkitContext;
 //var markerRoot1;
 var mesh1;
+var gioscene;
+var universe;
 initialize();
 animate();
 function initialize()
@@ -182,12 +184,32 @@ function initialize()
 	
 	// Gio.js
 	controller.addData(data);
-    //controller.init();
+    controller.init();
+	gioscene = controller.getScene();
+	universe = createUniverse();
 	
-	markerRoot1.add( controller.init() );
+	// add universe to the scene
+	gioscene.add(universe);
+	
+	markerRoot1.add(universe );
 	
 	//markerRoot1.add( mesh1 );
 }
+
+// this function create a universe object (a three.js object)
+function createUniverse() {
+        var universeMesh = new THREE.Mesh();
+        universeMesh.geometry = new THREE.SphereGeometry(500, 128, 128);
+        universeMesh.material = new THREE.MeshBasicMaterial({
+                map: new THREE.TextureLoader().load(
+                        'images/galaxy.png'
+                ),
+                side: THREE.BackSide
+        });
+
+        return universeMesh;
+}
+
 function update()
 {
 	// update artoolkit on every frame
